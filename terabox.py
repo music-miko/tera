@@ -364,11 +364,19 @@ async def handle_message(client: Client, message: Message):
     except Exception as e:
         logger.error(f"Cleanup error: {e}")
 
+import os
+import asyncio
+from threading import Thread
+from flask import Flask, render_template
+from pyrogram import Client
+from pyrogram.idle import idle
+from loguru import logger
+
 flask_app = Flask(__name__)
 
-@flask_app.route('/')
+@flask_app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html")  # Make sure index.html exists
 
 def run_flask():
     flask_app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
@@ -376,22 +384,24 @@ def run_flask():
 def keep_alive():
     Thread(target=run_flask).start()
 
-async def start_user_client():
+async def main():
     if user:
         await user.start()
         logger.info("User client started.")
 
-def run_user():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(start_user_client())
+    await app.start()
+    logger.info("Bot client started.")
+
+    await idle()
+
+    await app.stop()
+    if user:
+        await user.stop()
 
 if __name__ == "__main__":
     keep_alive()
 
-    if user:
-        logger.info("Starting user client...")
-        Thread(target=run_user).start()
-
-    logger.info("Starting bot client...")
-    app.run()
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        logger.warning("Bot stopped manually.")
