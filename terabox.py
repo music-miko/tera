@@ -54,10 +54,7 @@ DUMP_CHAT_ID = "-1002023182491"
 
 FSUB_ID = "-1002023182491"
 
-USER_SESSION_STRING = os.environ.get('USER_SESSION_STRING', '')
-if len(USER_SESSION_STRING) == 0:
-    logging.info("USER_SESSION_STRING variable is missing! Bot will split Files in 2Gb...")
-    USER_SESSION_STRING = None
+USER_SESSION_STRING = "AgAtdNIAHp2Hk04d0iYrPrBsuN3TFAlmenC3aWkRjyDkhb6cPcNnEniprI9McTmBiC9cYpH6K0_DFJ7x4fC8GtFGqAYYGKSXrITDYjivANMnGZ7BUK2SHW2F4tAOUzCBMHpbt9npphT1jP4Gx6FdewoNmCB91Qif1KblknVYXcofeYEliKI4h4uCs-3AGXEkQyCmbSxMGX8aE2QXbiCMwuYnRCGsPavglqcm-n61TsgxTKc1o9gg1D6ixtyRgwkNkt1IdhJyBffVRIk76YT_6H9YrXUtwnJEYGsfCJMO3UImu4fIPYEtTvSRPzdNh_oz7HkWIQl5qQ1r50d5wY2_sLYPPvUvugAAAAHlEyeEAQ"
 
 app = Client("jetbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
