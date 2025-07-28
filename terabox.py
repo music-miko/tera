@@ -45,12 +45,12 @@ options = {
 
 aria2.set_global_options(options)
 
-API_ID = os.environ.get('TELEGRAM_API', '24620300')
+API_ID = os.environ.get('API_ID', '24620300')
 if len(API_ID) == 0:
     logging.error("TELEGRAM_API variable is missing! Exiting now")
     exit(1)
 
-API_HASH = os.environ.get('TELEGRAM_HASH', '9a098f01aa56c836f2e34aee4b7ef963')
+API_HASH = os.environ.get('API_HASH', '9a098f01aa56c836f2e34aee4b7ef963')
 if len(API_HASH) == 0:
     logging.error("TELEGRAM_HASH variable is missing! Exiting now")
     exit(1)
