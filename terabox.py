@@ -369,7 +369,7 @@ import asyncio
 from threading import Thread
 from flask import Flask, render_template
 from pyrogram import Client
-from pyrogram.idle import idle
+from pyrogram import idle
 from loguru import logger
 
 flask_app = Flask(__name__)
