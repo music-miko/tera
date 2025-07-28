@@ -50,9 +50,9 @@ API_HASH = "9a098f01aa56c836f2e34aee4b7ef963"
     
 BOT_TOKEN = "8138205060:AAEarnGPBB5MYhWnZaLQq_ONDYH9MDXugXE"
 
-DUMP_CHAT_ID = "-1002023182491"
+DUMP_CHAT_ID = -1002023182491
 
-FSUB_ID = "-1002023182491"
+FSUB_ID = -1002298964858
 
 USER_SESSION_STRING = "AgAtdNIAHp2Hk04d0iYrPrBsuN3TFAlmenC3aWkRjyDkhb6cPcNnEniprI9McTmBiC9cYpH6K0_DFJ7x4fC8GtFGqAYYGKSXrITDYjivANMnGZ7BUK2SHW2F4tAOUzCBMHpbt9npphT1jP4Gx6FdewoNmCB91Qif1KblknVYXcofeYEliKI4h4uCs-3AGXEkQyCmbSxMGX8aE2QXbiCMwuYnRCGsPavglqcm-n61TsgxTKc1o9gg1D6ixtyRgwkNkt1IdhJyBffVRIk76YT_6H9YrXUtwnJEYGsfCJMO3UImu4fIPYEtTvSRPzdNh_oz7HkWIQl5qQ1r50d5wY2_sLYPPvUvugAAAAHlEyeEAQ"
 
@@ -99,11 +99,11 @@ def format_size(size):
 
 @app.on_message(filters.command("start"))
 async def start_command(client: Client, message: Message):
-    join_button = InlineKeyboardButton("ᴊᴏɪɴ ❤️🚀", url="https://t.me/jetmirror")
-    developer_button = InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ ⚡️", url="https://t.me/rtx5069")
-    repo69 = InlineKeyboardButton("ʀᴇᴘᴏ 🌐", url="https://github.com/Hrishi2861/Terabox-Downloader-Bot")
+    join_button = InlineKeyboardButton("📡 Updates", url="https://t.me/DeadlineTechTeam")
+    developer_button = InlineKeyboardButton("🏪 Support", url="https://t.me/rtx5069")
+    repo69 = InlineKeyboardButton("", url="https://github.com/Hrishi2861/Terabox-Downloader-Bot")
     user_mention = message.from_user.mention
-    reply_markup = InlineKeyboardMarkup([[join_button, developer_button], [repo69]])
+    reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
     final_msg = f"ᴡᴇʟᴄᴏᴍᴇ, {user_mention}.\n\n🌟 ɪ ᴀᴍ ᴀ ᴛᴇʀᴀʙᴏx ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ. sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴛᴇʀᴀʙᴏx ʟɪɴᴋ ɪ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ᴡɪᴛʜɪɴ ғᴇᴡ sᴇᴄᴏɴᴅs ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ ✨."
     video_file_id = "/app/Jet-Mirror.mp4"
     if os.path.exists(video_file_id):
@@ -187,7 +187,7 @@ async def handle_message(client: Client, message: Message):
         f"✨ {download.name}\n"
         f"👤 ʟᴇᴇᴄʜᴇᴅ ʙʏ : <a href='tg://user?id={user_id}'>{message.from_user.first_name}</a>\n"
         f"📥 ᴜsᴇʀ ʟɪɴᴋ: tg://user?id={user_id}\n\n"
-        "[ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴊᴇᴛ-ᴍɪʀʀᴏʀ ❤️🚀](https://t.me/)"
+        "[ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴊᴇᴛ-ᴍɪʀʀᴏʀ ❤️🚀](https://t.me/DeadlineTechTeam)"
     )
 
     last_update_time = time.time()
