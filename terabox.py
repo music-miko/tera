@@ -45,34 +45,14 @@ options = {
 
 aria2.set_global_options(options)
 
-API_ID = os.environ.get('API_ID', '24620300')
-if len(API_ID) == 0:
-    logging.error("TELEGRAM_API variable is missing! Exiting now")
-    exit(1)
-
-API_HASH = os.environ.get('API_HASH', '9a098f01aa56c836f2e34aee4b7ef963')
-if len(API_HASH) == 0:
-    logging.error("TELEGRAM_HASH variable is missing! Exiting now")
-    exit(1)
+API_ID = 24620300
+API_HASH = "9a098f01aa56c836f2e34aee4b7ef963"
     
-BOT_TOKEN = os.environ.get('BOT_TOKEN', '8138205060:AAEarnGPBB5MYhWnZaLQq_ONDYH9MDXugXE')
-if len(BOT_TOKEN) == 0:
-    logging.error("BOT_TOKEN variable is missing! Exiting now")
-    exit(1)
+BOT_TOKEN = "8138205060:AAEarnGPBB5MYhWnZaLQq_ONDYH9MDXugXE"
 
-DUMP_CHAT_ID = os.environ.get('DUMP_CHAT_ID', '-1002023182491')
-if len(DUMP_CHAT_ID) == 0:
-    logging.error("DUMP_CHAT_ID variable is missing! Exiting now")
-    exit(1)
-else:
-    DUMP_CHAT_ID = int(DUMP_CHAT_ID)
+DUMP_CHAT_ID = "-1002023182491"
 
-FSUB_ID = os.environ.get('FSUB_ID', '-1002023182491')
-if len(FSUB_ID) == 0:
-    logging.error("FSUB_ID variable is missing! Exiting now")
-    exit(1)
-else:
-    FSUB_ID = int(FSUB_ID)
+FSUB_ID = "-1002023182491"
 
 USER_SESSION_STRING = os.environ.get('USER_SESSION_STRING', '')
 if len(USER_SESSION_STRING) == 0:
