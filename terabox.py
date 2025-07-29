@@ -30,7 +30,7 @@ logging.getLogger("pyrogram.dispatcher").setLevel(logging.ERROR)
 aria2 = Aria2API(
     Aria2Client(
         host="http://localhost",
-        port=6801,
+        port=6800,
         secret="3f1a9c19b94742c6ba7e8d15f9377b08"
     )
 )
