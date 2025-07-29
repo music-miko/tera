@@ -366,42 +366,40 @@ async def handle_message(client: Client, message: Message):
 
 import os
 import asyncio
+import logging
 from threading import Thread
 from flask import Flask, render_template
-from pyrogram import Client
-from pyrogram import idle
-from loguru import logger
+from pyrogram import Client, idle
 
+# Flask app for keep-alive
 flask_app = Flask(__name__)
 
-@flask_app.route("/")
+@flask_app.route('/')
 def home():
-    return render_template("index.html")  # Make sure index.html exists
+    return "✅ Bot is alive!"
 
 def run_flask():
     flask_app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 def keep_alive():
-    Thread(target=run_flask).start()
+    Thread(target=run_flask).start()   
 
-async def main():
+async def start_clients():
     if user:
         await user.start()
         logger.info("User client started.")
-
     await app.start()
     logger.info("Bot client started.")
-
     await idle()
-
     await app.stop()
     if user:
         await user.stop()
+    logger.info("Stopped both clients.")
+
+def main():
+    keep_alive()
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(start_clients())
 
 if __name__ == "__main__":
-    keep_alive()
-
-    try:
-        asyncio.run(main())
-    except (KeyboardInterrupt, SystemExit):
-        logger.warning("Bot stopped manually.")
+    main()
