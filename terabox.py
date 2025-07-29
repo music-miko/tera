@@ -1,4 +1,5 @@
 from aria2p import API as Aria2API, Client as Aria2Client
+import aria2p
 import asyncio
 from dotenv import load_dotenv
 from datetime import datetime
@@ -27,13 +28,17 @@ logging.getLogger("pyrogram.session").setLevel(logging.ERROR)
 logging.getLogger("pyrogram.connection").setLevel(logging.ERROR)
 logging.getLogger("pyrogram.dispatcher").setLevel(logging.ERROR)
 
-aria2 = Aria2API(
-    Aria2Client(
+aria2 = aria2p.API(
+    aria2p.Client(
         host="http://localhost",
         port=6800,
-        secret="3f1a9c19b94742c6ba7e8d15f9377b08"
+        secret="your_secret_here"
     )
 )
+
+download = aria2.add_uris(["http://speed.hetzner.de/100MB.bin"])
+print("Started:", download.gid)
+
 options = {
     "max-tries": "50",
     "retry-wait": "3",
